@@ -102,4 +102,5 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
-### Paso 1: Instalación de Kubernetes (Minikube) en Linux
+---
+### Paso 2: Instalación de Kubernetes (Minikube) en Linux
