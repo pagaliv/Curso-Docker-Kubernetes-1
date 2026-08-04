@@ -26,6 +26,8 @@ EXPOSE 8080
 # 7. Comando que se ejecuta al iniciar el contenedor
 CMD ["python3", "app.py"]
 ```
+---
+
 #  Componentes clave (instrucciones principales)
 ## FROM - la base 
 ```dockerfile
@@ -34,3 +36,19 @@ FROM node:18-alpine
 FROM python:3.11-slim
 ```
 Define la imagen base sobre la que se contruira y siempre es la primera intrucción de un Dockerfile, se pueden usar imagenes propias como oficiales.
+
+## RUN - ejecutar comandos 
+```dockerfile
+RUN apt-get update
+RUN pip install flask
+RUN npm install -g create-react-app
+```
+ejecuta comandos durante la contrucción de la imagen, cada RUN crea una nueva capa en la imagen.
+
+## COPY y ADD - Copiar archivos
+```dockerfile
+COPY app.py /app/
+COPY . /usr/src/app/
+ADD https://ejemplo.com/archivo.tar.gz /tmp/
+```
+copia archivos desde tu sistema a la imagen, COPY es el simple y si solo hay que trasportarlo es el recomendado, por su parte ADD tiene funcionalidades extras como descomprimir o descargar URLs.
