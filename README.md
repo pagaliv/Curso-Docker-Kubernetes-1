@@ -55,3 +55,7 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 # Añade tu usuario al grupo docker para no usar sudo siempre
 sudo usermod -aG docker $USER
 ```
+- -Ag: Añade(append) al Grupo
+- docker: Nombre del grupo
+- $USER: variable que contiene tu nombre de usuario
+Se podra usar docker sin sudo, ahorrando escribirlo cada vez. 
