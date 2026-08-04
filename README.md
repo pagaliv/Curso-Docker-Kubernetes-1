@@ -129,7 +129,7 @@ kubectl get nodes
 ```
 ---
 ### Paso 4: Primera App
-Vamos a crear una primera app ligera para aprender 
+Vamos a crear una primera app ligera para aprender, donde quieras tener los proyectos vamos a crear una nueva carpeta
 ```bash
 mkdir mi-primer-proyecto && cd mi-primer-proyecto
 ```
