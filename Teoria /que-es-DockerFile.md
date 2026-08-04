@@ -2,7 +2,7 @@
 Un Dockerfile es un archivo de texto con instrucciones para contruir una imagen en Docker. Es como "una receta de comida" que le dice como crear tu aplicación empaquetada.
 ---
 # Estructura básica de un Dockerfile
-```bash
+```dockerfile
 # Comentarios (empiezan con #)
 
 # 1. Imagen base (el "punto de partida")
@@ -26,3 +26,5 @@ EXPOSE 8080
 # 7. Comando que se ejecuta al iniciar el contenedor
 CMD ["python3", "app.py"]
 ```
+#  Componentes clave (instrucciones principales)
+## FROM - la base 
