@@ -98,4 +98,18 @@ docker run --rm -it ubuntu bash
 # 8. Ejecutar comando específico
 docker run ubuntu ls -la
 ```
+---
+
+## docker ps - Listar contenedores
+
+```bash
+docker ps           # Solo los que están corriendo
+docker ps -a        # Todos (incluyendo detenidos)
+docker ps -q        # Solo IDs (útil para scripts)
+```
+### Ejemplo de salida
+```bash
+CONTAINER ID   IMAGE     COMMAND   CREATED        STATUS        PORTS                    NAMES
+abc123def456   nginx     "nginx"   5 minutes ago  Up 5 minutes  0.0.0.0:8080->80/tcp     mi-web
+```
 
