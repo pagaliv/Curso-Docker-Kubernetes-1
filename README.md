@@ -127,3 +127,10 @@ minikube start --driver=docker
 kubectl get nodes
 # Deberías ver un nodo con estado "Ready"
 ```
+---
+### Paso 4: Primera App
+Vamos a crear una primera app ligera para aprender 
+```bash
+mkdir mi-primer-proyecto && cd mi-primer-proyecto
+```
+
