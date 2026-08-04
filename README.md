@@ -39,3 +39,19 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 - $(lsb_release -cs): Obtiene el nombre de tu versión de Ubuntu
 - tee: Escribe la línea en el archivo /etc/apt/sources.list.d/docker.list
 - > /dev/null: Suprime la salida para no mostrar el contenido en pantalla
+
+```bash
+#actualiza la lista de paquetes disponibles en Ubuntu
+sudo apt update
+```
+Actualiza los repositorios nuevamente para incluir el nuevo repositorio de Docker que acabas de añadir.
+
+```bash
+# Instala Docker
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+```bash
+# Añade tu usuario al grupo docker para no usar sudo siempre
+sudo usermod -aG docker $USER
+```
