@@ -47,6 +47,7 @@ docker rmi mi-app:1.0         # Elimina la imagen v1.0
 docker rmi abc123def456       # Elimina por ID
 docker rmi $(docker images -q) # ¡CUIDADO! Elimina TODAS las imágenes
 ```
+---
 ## docker tag - Renombrar/etiquetar una imagen
 ```bash
 docker tag <imagen_original> <nuevo_nombre>:<tag>
@@ -57,3 +58,5 @@ docker tag <imagen_original> <nuevo_nombre>:<tag>
 docker tag mi-app:1.0 usuario/mi-app:latest
 docker tag mi-app:1.0 usuario/mi-app:1.0
 ```
+----
+d
