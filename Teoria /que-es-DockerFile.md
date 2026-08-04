@@ -59,3 +59,11 @@ WORKDIR /app
 WORKDIR /usr/src/proyecto
 ```
 Establece en el directorio donde se ejecutan los comandos, es como el cd dentro de la imagen, sirve para moverse.
+
+## ENV - Variables de entorno
+```dockerfile
+ENV NODE_ENV=production
+ENV PORT=3000
+ENV DATABASE_URL=postgresql://...
+```
+Establece en el directorio donde se ejecutan los comandos, es como el cd dentro de la imagen, sirve para moverse.
