@@ -52,3 +52,10 @@ COPY . /usr/src/app/
 ADD https://ejemplo.com/archivo.tar.gz /tmp/
 ```
 copia archivos desde tu sistema a la imagen, COPY es el simple y si solo hay que trasportarlo es el recomendado, por su parte ADD tiene funcionalidades extras como descomprimir o descargar URLs.
+
+## WORKDIR - Directorio de trabajo
+```dockerfile
+WORKDIR /app
+WORKDIR /usr/src/proyecto
+```
+Establece en el directorio donde se ejecutan los comandos, es como el cd dentro de la imagen, sirve para moverse.
