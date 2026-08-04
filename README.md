@@ -133,4 +133,27 @@ Vamos a crear una primera app ligera para aprender, donde quieras tener los proy
 ```bash
 mkdir mi-primer-proyecto && cd mi-primer-proyecto
 ```
+Crearemos el codigo en python por simplicidad 
+```bash
+cat > app.py << 'EOF'
+from flask import Flask, jsonify
+import os
 
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return jsonify({
+        "mensaje": "¡Hola desde Docker + Kubernetes!",
+        "host": os.environ.get('HOSTNAME', 'desconocido'),
+        "version": "v1"
+    })
+
+@app.route('/health')
+def health():
+    return "OK", 200
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+EOF
+```
