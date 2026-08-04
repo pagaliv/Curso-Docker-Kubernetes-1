@@ -28,3 +28,9 @@ CMD ["python3", "app.py"]
 ```
 #  Componentes clave (instrucciones principales)
 ## FROM - la base 
+```dockerfile
+FROM ubuntu:22.04
+FROM node:18-alpine
+FROM python:3.11-slim
+```
+Define la imagen base sobre la que se contruira y siempre es la primera intrucción de un Dockerfile, se pueden usar imagenes propias como oficiales.
