@@ -68,3 +68,27 @@ ENV DATABASE_URL=postgresql://...
 ```
 Define variables de entorno dentro del contenedor
 
+## EXPOSE - Puertos
+```dockerfile
+EXPOSE 8080
+EXPOSE 3000
+```
+Indica que puertos va a usar la aplicación, es documentación NO abre puertos automaticamente. 
+
+
+##  CMD vs ENTRYPOINT - Comandos de ejecución
+```dockerfile
+# CMD: El comando por defecto (se puede sobrescribir)
+CMD ["node", "server.js"]
+CMD ["python", "app.py"]
+
+# ENTRYPOINT: El comando principal (no se sobrescribe fácilmente)
+ENTRYPOINT ["python"]
+CMD ["app.py"]  # Argumento por defecto para ENTRYPOINT
+```
+- CMD: se puede sobreescribir al ejecutar docker run
+- ENTRYPOINT : El comando base siempre se ejecuta 
+
+
+
+
