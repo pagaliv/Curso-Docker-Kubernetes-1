@@ -66,4 +66,5 @@ ENV NODE_ENV=production
 ENV PORT=3000
 ENV DATABASE_URL=postgresql://...
 ```
-Establece en el directorio donde se ejecutan los comandos, es como el cd dentro de la imagen, sirve para moverse.
+Define variables de entorno dentro del contenedor
+
