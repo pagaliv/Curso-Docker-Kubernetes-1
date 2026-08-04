@@ -59,4 +59,43 @@ docker tag mi-app:1.0 usuario/mi-app:latest
 docker tag mi-app:1.0 usuario/mi-app:1.0
 ```
 ----
-d
+# Comandos Gestion de contenedores
+## docker run - Crear y ejecutar un contenedor
+```bash
+docker run [opciones] <imagen> [comando]
+```
+### Opciones fundamentales 
+- -d, --detach: Ejecuta en segundo plano
+- --name: Asigna un nombre al contenedor
+- -p, -publish: Mapea puertos host:container
+- -v, --volume: Monta un volumen para persistir datos
+- -e, --env: Define variables de entorno
+- --rm: Elimina el contenedor al deternerse
+
+### Ejemplos practicos
+```bash
+# 1. Ejecutar en primer plano (ver logs)
+docker run -p 8080:80 nginx
+
+# 2. Ejecutar en segundo plano con nombre
+docker run -d --name mi-web -p 8080:80 nginx
+
+# 3. Con variables de entorno
+docker run -d -e MYSQL_ROOT_PASSWORD=secreto -e MYSQL_DATABASE=mi_db mysql
+
+# 4. Con volumen persistente
+docker run -d -v /mi/datos:/app/data mi-app
+
+# 5. Puerto mapeado y nombre
+docker run -d --name mi-app -p 3000:3000 mi-app:1.0
+
+# 6. Con recurso limitado
+docker run -d --memory="512m" --cpus="1" nginx
+
+# 7. Ejecutar y luego eliminar automáticamente
+docker run --rm -it ubuntu bash
+
+# 8. Ejecutar comando específico
+docker run ubuntu ls -la
+```
+
