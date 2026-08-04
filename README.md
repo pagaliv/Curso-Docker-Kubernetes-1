@@ -34,4 +34,8 @@ La clave GPG es la clave publico-privada que te garantiza que te estas instaland
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 - deb: indica que es un repo de paquetes
-- 
+- arch=$(dpkg --print-architecture): Detecta automáticamente tu arquitectura
+- signed-by=...: Especifica qué clave GPG usar para verificar paquetes
+- $(lsb_release -cs): Obtiene el nombre de tu versión de Ubuntu
+- tee: Escribe la línea en el archivo /etc/apt/sources.list.d/docker.list
+- > /dev/null: Suprime la salida para no mostrar el contenido en pantalla
