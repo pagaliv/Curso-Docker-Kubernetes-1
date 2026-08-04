@@ -118,3 +118,12 @@ minikube version
 kubectl version --client
 ```
 Para verificar que todo ha ido correctamente deberán aparecer las versiones correspondientes de ambos comandos.
+
+---
+### Paso 3: verificación de correcto funcionamiento
+
+```bash
+minikube start --driver=docker
+kubectl get nodes
+# Deberías ver un nodo con estado "Ready"
+```
