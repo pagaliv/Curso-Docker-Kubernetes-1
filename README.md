@@ -58,4 +58,15 @@ sudo usermod -aG docker $USER
 - -Ag: Añade(append) al Grupo
 - docker: Nombre del grupo
 - $USER: variable que contiene tu nombre de usuario
-Se podra usar docker sin sudo, ahorrando escribirlo cada vez. 
+Se podra usar docker sin sudo, ahorrando escribirlo cada vez.
+
+```bash
+# Añade tu usuario al grupo docker para no usar sudo siempre
+sudo usermod -aG docker $USER
+```
+
+Verifica que funciona:
+```bash
+docker --version
+docker run hello-word
+```
