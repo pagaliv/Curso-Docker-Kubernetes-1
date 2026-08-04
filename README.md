@@ -13,11 +13,13 @@ sudo apt update
 #Instalamos las dependencias necesarias 
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 ```
+
 - apt-trasport-https: Permite a apt usar repositorios HTTPS
 - ca-certificates: Certificados SSL para conexiones seguras
 - curl: Herramienta para trasferir datos
 - software-propierties-common: Añade comandos como add-apt-repository que es un atajo para añadir repositorios facilmente
 - -y: Responde automaticamente "Si" a las preguntas de isntalación
+
 ```bash
 # Añade la clave GPG oficial de Docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -26,3 +28,10 @@ La clave GPG es la clave publico-privada que te garantiza que te estas instaland
 - curl -fsSL: Descarga silenciosamente la clave
 - gpg --dearmor: Convierte la clave en formato binario
 - -o: Guarda el archivo en la ruta especficiada
+
+```bash
+# Añade el repositorio de Docker
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+- deb: indica que es un repo de paquetes
+- 
